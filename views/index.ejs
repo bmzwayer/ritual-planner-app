@@ -5,7 +5,11 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <nav>
+        <%if (user) { %>
+        <a class="login-oauth" href="/logout">Logout</a>
+      <% } else %>
+      <a class="google-oauth" href="/auth/google">Login</a>
+    </nav>
   </body>
 </html>
