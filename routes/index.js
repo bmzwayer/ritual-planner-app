@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 router.get('/', function(req, res, next) {
   res.render('index', { 
-    title: 'sync',
+    title: 'ritual',
     user: req.user,
     name:req.query.name
   });
@@ -16,7 +16,7 @@ router.get('/oauth2callback', passport.authenticate(
   'google',
   {
     successRedirect : '/users',
-    failureRedirect : '/users'
+    failureRedirect : '/'
   }
 ));
  // OAuth logout route
